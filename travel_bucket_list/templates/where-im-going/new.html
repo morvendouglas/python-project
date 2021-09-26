@@ -1,0 +1,21 @@
+{% extends "where-im-going/index.html" %}
+{% block content2 %}
+
+<form action="/where-im-going" method="POST" class="new-country-form">
+    <div>
+        <label for="country">Country</label><br>
+        <input type="text" id="country" name="country_name" placeholder="country" class="add-destination-button" required autofocus>
+    </div>
+    <div>
+        <div>&#8595;</div>
+        <label for="visited" class="grey-out">Visited before?</label><br>
+        <select id="visited" name="visited" class="add-destination-button">
+            <option value="false">Nope. Still to see!</option>
+            <option value="true">Yes! Going again.</option>
+        </select>
+    </div>
+    <div>&#8595;</div>
+    <button type="submit" class="add-destination-button">Add Destination</button>
+</form>
+
+{% endblock %}

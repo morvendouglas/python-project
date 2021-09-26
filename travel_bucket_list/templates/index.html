@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}
+
+<nav class="container">
+    <div>
+    <a href="/where-im-going" action="where-im-going">
+        <ul class="where-im-going">
+            <li class="bold">ΠΟΥ ΠΑΩ</li> 
+            <li class="italics">ਮੈਂ ਕਿੱਥੇ ਜਾ ਰਿਹਾ ਹਾਂ</li>
+            <li class="bold">我要去哪里 </li>
+            <li class="italics">КЪДЕ ТЪРСЯ</li>  
+            <li class="bold"> OÙ JE VAIS</li>
+            <li class="italics">A DONDE VOY</li>
+            <li class="bold">ONDE EU VOU</li>
+            <li class="italics">WAAR IK HEEN GA</li>
+            <li class="white" class="bold">WHERE I'M GOING</li>
+    </a>
+    </div>
+    <div id="align-right">
+    <a href="where-ive-been" action="/where-ive-been">
+        <ul class="where-ive-been">
+            <li class="bold">ΠΟΥ ΕΙΜΑΙ</li> 
+            <li class="italics">ਮੈਂ ਕਿੱਥੇ ਰਿਹਾ ਹਾਂ</li>
+            <li class="bold">我去过的地方</li>
+            <li class="italics">КЪДЕ БЪДЕХ</li>  
+            <li class="bold">O J'AI ÉTÉ</li>
+            <li class="italics">DONDE HE ESTADO</li>
+            <li class="bold">ONDE EU ESTIVE</li>
+            <li class="italics" >WAAR IK BEN GEWEEST</li>
+            <li class="white" class="bold">WHERE I'VE BEEN</li>
+        </ul>
+    </a>
+    </div>
+</nav>
+
+<div>
+<div><blockquote>“Travel is the only thing you buy that makes you richer” – Anonymous.</blockquote></div>
+<div><blockquote class="quote-right">“Live with no excuses and travel with no regrets” - Oscar Wilde.</blockquote></div>
+</div>
+
+<div>
+<img src="static/images/federico-beccari-ryC3SVUeRgY-unsplash.jpg" alt="travel-photo">
+<quote>There are no cars in Venice.</quote>
+</div>
+
+<div>
+<quote class="quote-2">Japan is mostly mountains.</quote>
+<img src="static/images/andre-benz-MsMISAIe8Qw-unsplash.jpg" class="img-2" alt="travel-photo">
+</div>
+
+<footer>
+    <a href="/where-im-going" action="where-im-going">Where I'm Going</a>
+    <a href="where-ive-been" action="/where-ive-been">Where I've Been</a>
+</footer>
+
+{% endblock %}

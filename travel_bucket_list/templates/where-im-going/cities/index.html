@@ -1,0 +1,33 @@
+{% extends "where-im-going/index.html" %}
+{% block content2 %}
+
+<main>
+    <h1>Cities</h1>
+    <div>
+      {% for city in cities %}
+    
+      <div>
+        <a href="/where-im-going/{{city.id}}">{{city.name}}</a>
+        </div>
+    
+        <div class="visited">
+          <label class="grey-out">Visited before?:</label><br>
+          {% if city.visited == True %}
+          <span>Yes! Going again.</span>
+         {% else %}
+        <span> Nope. Still to see!</span>
+           </div> 
+           {% endif %}
+    
+        <div">
+        <form action="/where-im-going/{{city.id}}/delete" method="POST">
+        <button><i class="fa fa-times fa-2x" aria-hidden="true"></i></button>
+        </form>
+        </div>
+    
+    {% endfor %}
+    </div>
+    
+    </main>
+    {% endblock %}
+

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styling-wig.css') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,700;1,400&family=Slabo+27px&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Where I'm Going</title>
+</head>
+<body>
+<header>
+  <nav role="navigation">
+    <div id="menu-toggle">
+      <input type="checkbox"/>
+      <span></span>
+      <span></span>
+      <span></span>
+      <ul id="menu">
+        <a href="/where-im-going"><li>Destinations</li></a><br>
+        <a href="/where-im-going/new"><li>Add New Destination</li></a></br>
+        <a href="/" class="plane2">&#9992;</i></a>
+      </ul>
+    </div>
+  </nav>
+</header>
+{% block content2 %}
+<main>
+<h1>Travel Bucket List</h1>
+
+<div class="grid">
+  {% for country in countries %}
+
+  <div class="country-name">
+    &#9734;<a href="/where-im-going/{{country.id}}">{{country.name}}</a>
+    </div>
+
+    <div class="view-cities">
+    <a href="where-im-going/cities">Cities</a><br>
+    {{ cities }}
+    </div>
+
+    <div class="visited">
+      <label class="grey-out">Visited before?:</label><br>
+      {% if country.visited == True %}
+      <span>Yes! Going again.</span>
+     {% else %}
+    <span> Nope. Still to see!</span>
+       </div> 
+       {% endif %}
+
+    <div class="delete-country">
+    <form action="/where-im-going/{{country.id}}/delete" method="POST">
+    <button><i class="fa fa-times fa-2x" aria-hidden="true"></i></button>
+    </form>
+    </div>
+
+{% endfor %}
+</div>
+
+</main>
+{% endblock %}
+</body>
+</html>
+
+
+
