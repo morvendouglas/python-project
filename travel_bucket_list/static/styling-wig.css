@@ -18,14 +18,12 @@ a {
     padding: 20px;
     margin: 20px;
 }
-
 .grid {
   padding: 50px;
   display: grid;
    grid-template-columns: repeat(4, 1fr);
    align-content: center;
- }
-
+}
 .country-name {
   font-size: xx-large;
   padding: 20px;
@@ -41,14 +39,14 @@ a {
     margin-bottom: 30px;
 }
 .visited {
-  font-size: xx-large;
+  font-size: x-large;
   padding-top: 10px;
-  padding-bottom: 30px;
+  padding-left: 40px;
+  padding-bottom: 40px;
   border-bottom: 1px rgb(202, 73, 73) solid;
   margin-top: 30px;
   margin-bottom: 30px;
 }
-
 .delete-country {
   padding: 20px;
   padding-left: 200px;
@@ -58,12 +56,7 @@ a {
 }
 .delete-country i {
     cursor: pointer;
-  
 }
-
-
-
-
 h1 {
   font-size: 50px;
 }
@@ -155,7 +148,7 @@ h1 {
   transform: none;
 }
 .plane2 {
-  font-size: 60px;
+  font-size: 70px;
   color: rgb(202, 73, 73);
 }
 
@@ -208,6 +201,13 @@ h1 {
 #show-country-edit {
   color: rgb(202, 73, 73);
   font-weight: bolder;
+}
+
+/* CITY INDEX */
+
+.city-index {
+  text-align: center;
+  color: black;
 }
 
 

@@ -23,13 +23,13 @@
       <ul id="menu">
         <a href="/where-im-going"><li>Destinations</li></a><br>
         <a href="/where-im-going/new"><li>Add New Destination</li></a></br>
-        <a href="/" class="plane2">&#9992;</i></a>
+        <a href="/" class="plane2"><li></li>&#9992;</li></a>
       </ul>
     </div>
   </nav>
 </header>
 {% block content2 %}
-<main>
+<body>
 <h1>Travel Bucket List</h1>
 
 <div class="grid">
@@ -40,18 +40,18 @@
     </div>
 
     <div class="view-cities">
-    <a href="where-im-going/cities">Cities</a><br>
-    {{ cities }}
+    <a href="where-im-going/{{country.id}}/cities">Cities</a><br>
     </div>
 
     <div class="visited">
       <label class="grey-out">Visited before?:</label><br>
-      {% if country.visited == True %}
-      <span>Yes! Going again.</span>
-     {% else %}
-    <span> Nope. Still to see!</span>
-       </div> 
-       {% endif %}
+    {% if country.visited == True %} 
+        <span>Yes! Going again.</span>
+    {% else %}
+        <span>Nope. Still to see!</span>
+      {% endif %}
+      </div> 
+    
 
     <div class="delete-country">
     <form action="/where-im-going/{{country.id}}/delete" method="POST">
@@ -61,8 +61,6 @@
 
 {% endfor %}
 </div>
-
-</main>
 {% endblock %}
 </body>
 </html>

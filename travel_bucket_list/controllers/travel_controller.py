@@ -7,6 +7,8 @@ from models.city import City
 
 travel_blueprint = Blueprint("travel", __name__)
 
+# where im going / travel bucket list
+
 # index pages
 @travel_blueprint.route("/where-im-going")
 def countries():
@@ -49,7 +51,7 @@ def update_country(id):
     country_repository.update(country)
     return redirect('/where-im-going')
 
-# delete entries/destinations
+# delete
 @travel_blueprint.route("/where-im-going/<id>/delete", methods=['POST'])
 def delete_country(id):
     country_repository.delete(id)
@@ -59,10 +61,45 @@ def delete_country(id):
 
 # _________________________________________________
 
+# trying to all cities attached to one country vvvv (these aren't right)
 
-
-@travel_blueprint.route("/where-im-going/cities")
+@travel_blueprint.route("/where-im-going/<country>/cities")
 def cities(country):
-    country = country_repository.select(['country_id'])
+    # something so use the country.name
     cities = country_repository.cities(country)
-    return render_template("where-im-going/cities/index.html", cities = cities)
+    return render_template("where-im-going/cities/index.html", country = country, cities = cities)
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# where ive been / memories (maybe seperate memory class if there is time)
+
+# index pages
+# @travel_blueprint.route("/where-ive-been")
+# def memories():
+#     return render_template("where-ive-been/index.html")
+

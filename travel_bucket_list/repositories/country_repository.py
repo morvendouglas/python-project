@@ -43,10 +43,12 @@ def update(country):
     values = [country.name, country.visited, country.id]
     run_sql(sql, values)
 
+
+
 def cities(country):
     cities = []
     sql = "SELECT * FROM cities WHERE country_id = %s"
-    values = [country.id]
+    values = ['country_id']
     results = run_sql(sql, values)
     for item in results:
         city = City(item['city_name'], item['country_id'], item['visited'], item['id'])

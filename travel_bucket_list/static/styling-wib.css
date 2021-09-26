@@ -1,0 +1,9 @@
+body {
+    background: url() no-repeat center center fixed; 
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    color: black;
+    font-family: 'Slabo 27px', serif;
+    background-color: thistle;
+}

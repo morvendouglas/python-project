@@ -49,6 +49,9 @@ font-family: 'Slabo 27px', serif;
 a {
     text-decoration: none;
 }
+.red {
+    color: rgb(202, 73, 73);
+}
 .white {
     color: white;
 }
