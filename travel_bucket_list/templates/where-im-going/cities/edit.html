@@ -1,0 +1,22 @@
+{% extends "where-im-going/cities/index.html" %}
+{% block content2 %}
+
+<h1>{{ country.name }}</h1> 
+<form action="/where-im-going/countries/{{country.id}}/cities/{{city.id}}" method="POST" class="new-country-form">
+    <div>
+        <label for="city">City</label><br>
+        <input type="text" id="country" name="city_name" placeholder="{{city.name}}" class="add-destination-button" required autofocus>
+    </div>
+    <div>
+        <div>&#8595;</div>
+        <label for="visited" class="grey-out">Visited before?</label><br>
+        <select id="visited" name="visited" class="add-destination-button">
+            <option value="false" {% if city.visited == False %} selected="selected" {% endif %}>Nope. Still to see!</option>
+            <option value="true" {% if city.visited == True  %} selected="selected" {% endif %}>Yes! Going again.</option>
+        </select>
+    </div>
+    <div>&#8595;</div>
+    <button type="submit" class="add-destination-button">Save City</button>
+</form>
+
+{% endblock %}

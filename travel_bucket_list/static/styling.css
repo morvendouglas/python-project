@@ -1,11 +1,10 @@
+/* BASE + INDEX PAGE */
+
 body {
     background: url(images/jonatan-pie-h8nxGssjQXs-unsplash.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  margin: 0;
-  font-family: 'Slabo 27px', serif;
+    background-size: cover;
+    margin: 0;
+    font-family: 'Slabo 27px', serif;
 }
 header {
     display: flex;
@@ -44,7 +43,7 @@ font-family: 'Slabo 27px', serif;
     list-style: none;
     font-size: 60px;
     color: rgb(165, 164, 164);
-font-family: 'Slabo 27px', serif;
+    font-family: 'Slabo 27px', serif;
 }
 a {
     text-decoration: none;
@@ -65,20 +64,16 @@ a {
     text-align: right;
     margin-right: 40px;
 }
-
 .where-im-going, li:hover {
-        font-size:50px;
-        font-size-adjust: 20px;
-    }
-
+    font-size:50px;
+    font-size-adjust: 20px;
+}
 .plane {
     color: rgb(202, 73, 73);
     font-size: 40px;
     margin-right: 20px;
     padding: 0;
-
 }
-
 blockquote {
     margin-top: 250px;
     margin-left: 0;
@@ -95,15 +90,12 @@ blockquote {
     max-width: 60%;
     margin-bottom: 50px;
 }
-
 blockquote:hover {
     color: white;
     border-top: solid white 3px;
     border-bottom: solid white 3px;
     border-right: solid white 3px;
-
 }
-
 .quote-right {
     margin-top: 50px;
     margin-right: 0;
@@ -121,41 +113,32 @@ blockquote:hover {
     margin-bottom: 150px;
     float: right;
 }
-
 .quote-right:hover {
     color: white;
     border-top: solid white 3px;
     border-bottom: solid white 3px;
     border-left: solid white 3px;
-
 }
-
 img {
     margin: 50px;
     width: 700px;
     height: 500px;
 }
-
 quote {
     color: white;
     font-size: x-large;
     float: right;
     margin-right: 200px;
-    padding-top: 250px;
-    
+    padding-top: 250px;  
 }
 .quote-2 {
     float: left;
-    margin-left: 120px;
-    
+    margin-left: 120px;  
 }
-
 .img-2 {
-    /* margin: 50px; */
     margin-right: -10px;
     width: 700px;
     height: 500px;
     padding-bottom: 150px;
-    
 }
 

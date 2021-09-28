@@ -1,16 +1,36 @@
 {% extends "where-im-going/index.html" %}
 {% block content2 %}
 
-<main>
-  <div class="city-index">
-      {{ country.name }}
-      <div>
-      {% for city in cities %}
-        <div>{{city.name}}</div>
-       {% endfor %}
-      <button><a href="/where-im-going/{{country.id}}/cities/new">Add a destination city to {{ country.name }}!</a></button>
+<div class="city-index">
+  <h1>{{ country.name }}</h1> 
+      
+  <div class="add-new-city-button">
+    <a href="/where-im-going/countries/{{country.id}}/cities/new">Add New City</a>
+  </div>
+
+  <div class="grid2">
+    {% for city in cities %}
+      <div class="country-name">
+        &#9734;<a href="/where-im-going/countries/{{country.id}}/cities/{{city.id}}">{{city.name}}</a>
       </div>
-    </div>
- </main>
+      
+      <div class="visited">
+        <label class="grey-out">Visited before?:</label><br>
+        {% if city.visited == True %} 
+          <span>Yes! Going again.</span>
+        {% else %}
+          <span>Nope. Still to see!</span>
+        {% endif %}
+      </div> 
+
+      <div class="delete-country">
+        <form action="/where-im-going/countries/{{country.id}}/cities/{{city.id}}/delete" method="POST">
+          <button><i class="fa fa-times fa-2x" aria-hidden="true"></i></button>
+        </form>    
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
 {% endblock %}
 

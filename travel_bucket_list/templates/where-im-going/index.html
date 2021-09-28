@@ -35,12 +35,12 @@
 <div class="grid">
   {% for country in countries %}
 
-  <div class="country-name">
-    &#9734;<a href="/where-im-going/{{country.id}}">{{country.name}}</a>
+    <div class="country-name">
+      &#9734;<a href="/where-im-going/{{country.id}}">{{country.name}}</a>
     </div>
 
     <div class="view-cities">
-    <a href="where-im-going/{{country.id}}/cities">Cities</a><br>
+      <a href="where-im-going/countries/{{country.id}}/cities">Cities</a><br>
     </div>
 
     <div class="visited">
@@ -50,13 +50,12 @@
     {% else %}
         <span>Nope. Still to see!</span>
       {% endif %}
-      </div> 
-    
+    </div> 
 
     <div class="delete-country">
-    <form action="/where-im-going/{{country.id}}/delete" method="POST">
-    <button><i class="fa fa-times fa-2x" aria-hidden="true"></i></button>
-    </form>
+      <form action="/where-im-going/{{country.id}}/delete" method="POST">
+        <button><i class="fa fa-times fa-2x" aria-hidden="true"></i></button>
+      </form>
     </div>
 
 {% endfor %}

@@ -1,15 +1,15 @@
 {% extends "where-im-going/index.html" %}
 {% block content2 %}
 
-<div id="show-country">
-        <span>{{country.name}}</span><br>
+<div class="show-country">
+        <span class="show-country-name">{{country.name}}</span><br>
         <label class="grey-out">Visited before?:</label><br>
         {% if country.visited == True %}
         <span>Yes! Going again.</span>
         {% else %}
       <span> Nope. Still to see!</span>
         {% endif %}<br>
-        <a href="/where-im-going/{{country.id}}/edit" id="show-country-edit">Edit</a>
+        <a href="/where-im-going/{{country.id}}/edit" class="show-country-edit">Edit</a>
     </div>
 
 

@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS countries;
 DROP TABLE IF EXISTS cities;
+DROP TABLE IF EXISTS countries;
 
 CREATE TABLE countries(
     id SERIAL PRIMARY KEY,
@@ -10,7 +10,7 @@ CREATE TABLE countries(
 CREATE TABLE cities(
     id SERIAL PRIMARY KEY,
     city_name VARCHAR(255),
-    country_id INT REFERENCES countries(id),
+    country_id INT REFERENCES countries(id) ON DELETE CASCADE,
     visited BOOLEAN
 );
 
