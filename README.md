@@ -1,9 +1,8 @@
+Travel Bucket List
 # python-project
 
 Running Instructions:
-Clone Repo from github
-Run flask
-Go to localhost:5000
+Clone Repo from github, run flask, go to localhost:5000.
 
 Brief:
 Build an app to track someone's travel adventures.
