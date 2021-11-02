@@ -1,5 +1,4 @@
-# Travel Bucket List
-Python Project
+# Travel Bucket List / CodeClan Python Project
 
 Running Instructions:
 Clone Repo from github, run flask, go to localhost:5000.
