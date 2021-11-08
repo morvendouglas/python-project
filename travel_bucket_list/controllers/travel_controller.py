@@ -8,7 +8,6 @@ import pdb
 
 travel_blueprint = Blueprint("travel", __name__)
 
-
 # countries
 
 # index pages
@@ -58,8 +57,6 @@ def update_country(id):
 def delete_country(id):
     country_repository.delete(id)
     return redirect('/where-im-going')
-
-
 
 # _________________________________________________
 

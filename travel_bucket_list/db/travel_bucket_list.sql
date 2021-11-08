@@ -10,7 +10,11 @@ CREATE TABLE countries(
 CREATE TABLE cities(
     id SERIAL PRIMARY KEY,
     city_name VARCHAR(255),
-    country_id INT REFERENCES countries(id) ON DELETE CASCADE,
+    country_id INT REFERENCES countries(id) ON DELETE CASCADE ON UPDATE SET NULL,
     visited BOOLEAN
 );
+
+
+
+
 
