@@ -1,17 +1,17 @@
-{% extends "where-im-going/index.html" %}
+{% extends "/index.html" %}
 {% block content2 %}
 
 <div class="city-index">
   <h1>{{ country.name }}</h1> 
       
   <div class="add-new-city-button">
-    <a href="/where-im-going/countries/{{country.id}}/cities/new">Add New City</a>
+    <a href="/countries/{{country.id}}/cities/new">Add New City</a>
   </div>
 
   <div class="grid2">
     {% for city in cities %}
       <div class="country-name">
-        &#9734;<a href="/where-im-going/countries/{{country.id}}/cities/{{city.id}}">{{city.name}}</a>
+        &#9734;<a href="/countries/{{country.id}}/cities/{{city.id}}">{{city.name}}</a>
       </div>
       
       <div class="visited">
@@ -24,7 +24,7 @@
       </div> 
 
       <div class="delete-country">
-        <form action="/where-im-going/countries/{{country.id}}/cities/{{city.id}}/delete" method="POST">
+        <form action="/countries/{{country.id}}/cities/{{city.id}}/delete" method="POST">
           <button><i class="fa fa-times fa-2x" aria-hidden="true"></i></button>
         </form>    
       </div>

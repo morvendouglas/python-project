@@ -1,4 +1,4 @@
-{% extends "where-im-going/index.html" %}
+{% extends "/index.html" %}
 {% block content2 %}
 
 <div class="show-country">
@@ -9,7 +9,7 @@
         {% else %}
       <span> Nope. Still to see!</span>
         {% endif %}<br>
-        <a href="/where-im-going/{{country.id}}/edit" class="show-country-edit">Edit</a>
+        <a href="/{{country.id}}/edit" class="show-country-edit">Edit</a>
     </div>
 
 

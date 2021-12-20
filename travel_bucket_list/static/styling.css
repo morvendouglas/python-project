@@ -1,77 +1,222 @@
-/* BASE + INDEX PAGE */
+/* INDEX COUNTRIES/CITIES */
 
 body {
     background: url(images/jonatan-pie-h8nxGssjQXs-unsplash.jpg) no-repeat center center fixed; 
     background-size: cover;
     margin: 0;
+    padding: 0;
+    color: rgb(197, 193, 193);
     font-family: 'Slabo 27px', serif;
 }
-header {
-    display: flex;
-    justify-content: right;
-    position: fixed;
-}
-footer {
-    background-color: rgb(202, 73, 73);
-    color: black;
-    height: 10vh;
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: -5vh;
-}
-footer a {
-    margin-top: 2vh;
-    font-weight: bolder;
-    color: black;
-    font-size: xx-large;
-}
-
-footer a:hover {
-    font-size:40px;
-
-}
-.container {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    margin-top: none;
-}
-.where-im-going, li {
-    list-style: none;
-    font-size: 60px;
-    color: rgb(189, 185, 185);
-font-family: 'Slabo 27px', serif;
-}
-.where-ive-been, li {
-    list-style: none;
-    font-size: 60px;
-    color: rgb(165, 164, 164);
-    font-family: 'Slabo 27px', serif;
+ul {
+    list-style-type:none;
+    position: absolute;
 }
 a {
     text-decoration: none;
+    color: rgb(197, 193, 193);
+    padding: 20px;
+    margin: 20px;
 }
-.red {
-    color: rgb(202, 73, 73);
+.grid {
+  padding: 50px;
+  display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   align-content: center;
 }
-.white {
-    color: white;
+.country-name {
+  font-size: xx-large;
+  padding: 20px;
+  border-bottom: 1px rgb(202, 73, 73) solid;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
-.bold {
-    font-weight: bolder;
+.view-cities {
+    font-size: xx-large;
+    padding: 20px;
+    border-bottom: 1px rgb(202, 73, 73) solid;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
-.italics {
-    font-style: italic;
+.visited {
+  font-size: x-large;
+  padding-top: 10px;
+  padding-left: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px rgb(202, 73, 73) solid;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
-#align-right {
-    text-align: right;
-    margin-right: 40px;
+.delete-country {
+  padding: 20px;
+  padding-left: 200px;
+  border-bottom: 1px rgb(202, 73, 73) solid;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
-.plane {
-    color: rgb(202, 73, 73);
-    font-size: 40px;
-    margin-right: 20px;
-    padding: 0;
+.delete-country i {
+    cursor: pointer;
+}
+h1 {
+  font-size: 50px;
+}
+.grey-out {
+  color: grey;
+}
+
+
+/* NAVBAR */
+
+#menu-toggle {
+  display: block;
+  position: relative;
+  top: 50px;
+  left: 50px;
+}
+#menu-toggle a {
+  text-decoration: none;
+  color: #232323;
+  transition: color 0.3s ease;
+}
+#menu-toggle a:hover {
+  color: rgb(202, 73, 73);
+}
+#menu-toggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2; 
+}
+#menu-toggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #cdcdcd;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+#menu-toggle span:first-child {
+  transform-origin: 0% 0%;
+}
+#menu-toggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+#menu-toggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+#menu-toggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+#menu-toggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+#menu {
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  background: #ededed;
+  list-style-type: none;
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+#menu li {
+  padding: 10px 0;
+  font-size: 22px;
+}
+#menu-toggle input:checked ~ ul {
+  transform: none;
+}
+
+
+/* NEW COUNTRY FORM */
+
+h1 {
+    margin-top: 30px;
+    text-align: center;
+}
+.new-country-form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+  margin-top: 20px;
+  font-size: xx-large;
+}
+.add-destination-button {
+  background-color: black;
+  border: none;
+  color: rgb(247, 245, 244);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  box-shadow: 0 8px 16px 0 rgb(238, 158, 143), 0 6px 20px 0 rgb(243, 186, 175);
+  border-radius: 15px;
+  margin: 20px;
+  cursor: pointer;
+}
+.add-destination-button:focus {
+  outline: none;
+  cursor: pointer;
+}
+
+
+/* SHOW COUNTRY */
+
+.show-country {
+  text-align: center;
+  font-size: xx-large;
+  margin-top: 50px;
+  margin-left: 30%;
+  margin-right: 30%;
+  padding: 50px;
+  
+}
+.show-country-edit {
+  margin-top: 20px;
+  color: rgb(202, 73, 73);
+  font-weight: bolder;
+  padding: 0;
+}
+
+.show-country-name {
+  margin-bottom: 20px;
+  text-decoration: underline;
+  font-size: 50px;
+}
+
+
+/* CITY INDEX */
+
+.city-index {
+  color: white;
+}
+.add-new-city-button {
+  text-align: center;
+}
+.grid2 {
+  padding: 90px;
+  display: grid;
+  grid-template-columns: repeat(3, 5fr);
+  align-content: center;
 }
 
 

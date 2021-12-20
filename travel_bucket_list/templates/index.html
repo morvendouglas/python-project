@@ -1,34 +1,67 @@
-{% extends "base.html" %}
-{% block content %}
-
-<nav class="container">
-    <div>
-        <ul class="where-im-going">
-            <li class="italics">ΠΟΥ ΠΑΩ</li> 
-            <li class="bold">ਮੈਂ ਕਿੱਥੇ ਜਾ ਰਿਹਾ ਹਾਂ</li>
-            <li class="italics">我要去哪里 </li>
-            <li class="bold"> OÙ JE VAIS</li>
-            <li class="italics">A DONDE VOY</li>
-            <li class="bold">ONDE EU VOU</li>
-            <li class="italics">WAAR IK HEEN GA</li>
-            <li class="white bold">WHERE I'M GOING</li>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styling.css') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,700;1,400&family=Slabo+27px&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Where I'm Going</title>
+</head>
+<body>
+<header>
+  <nav role="navigation">
+    <div id="menu-toggle">
+      <input type="checkbox"/>
+      <span></span>
+      <span></span>
+      <span></span>
+      <ul id="menu">
+        <a href="/"><li>Destinations</li></a><br>
+        <a href="/new"><li>Add New Destination</li></a></br>
+      </ul>
     </div>
-    <div id="align-right">
-        <ul class="where-ive-been">
-            <li class="italics">ΠΟΥ ΕΙΜΑΙ</li> 
-            <li class="bold">ਮੈਂ ਕਿੱਥੇ ਰਿਹਾ ਹਾਂ</li>
-            <li class="italics">我去过的地方</li>
-            <li class="bold">OÙ J'AI ÉTÉ</li>
-            <li class="italics">DONDE HE ESTADO</li>
-            <li class="bold">ONDE EU ESTIVE</li>
-            <li class="italics">WAAR IK BEN GEWEEST</li>
-            <li class="white bold">WHERE I'VE BEEN</li>
-        </ul>
+  </nav>
+</header>
+{% block content2 %}
+<body>
+<h1>Travel Bucket List</h1>
+
+<div class="grid">
+  {% for country in countries %}
+
+    <div class="country-name">
+      &#9734;<a href="/{{country.id}}">{{country.name}}</a>
     </div>
-</nav>
 
-<footer>
-    <a href="/where-im-going" action="where-im-going">Travel Bucket List</a>
-</footer>
+    <div class="view-cities">
+      <a href="/countries/{{country.id}}/cities">Cities</a><br>
+    </div>
 
+    <div class="visited">
+      <label class="grey-out">Visited before?:</label><br>
+    {% if country.visited == True %} 
+        <span>Yes! Going again.</span>
+    {% else %}
+        <span>Nope. Still to see!</span>
+      {% endif %}
+    </div> 
+
+    <div class="delete-country">
+      <form action="/{{country.id}}/delete" method="POST">
+        <button><i class="fa fa-times fa-2x" aria-hidden="true"></i></button>
+      </form>
+    </div>
+
+{% endfor %}
+</div>
 {% endblock %}
+</body>
+</html>
+
+
+
